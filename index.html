@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search Engin</title>
     <link href="./index.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    
+    <div id="main-div">
+        <input id="input" type="text" placeholder="Enter movie name..." />
+        <button onclick="search()">Search</button>
+        <h2 id="status"></h2>
+        <div id="movie-wrapper">
+
+        </div>
+    </div>
     <script src="./index.js"></script>
 </body>
+
 </html>
