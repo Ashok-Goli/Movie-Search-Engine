@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400&family=Oswald&display=swap');
 body{
     margin: 0px;
     background: #355C7D;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-family: 'Josefin Sans', sans-serif;
 
+}
+header{
+    background-color: #0095ff;
+    text-align: center;
+    margin-top: -34px;
+}
+header>h1{
+    padding: 15px;
+    font-size: 50px;
+    color: rgb(179, 245, 220);
+    font-weight: bolder;
+    text-shadow: 2px 2px 5px black;
 }
 #main-div{
     margin-top: 30px;
@@ -45,6 +59,9 @@ background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, F
     justify-content: center;
 }
 #movie-card{
+    height: 480px;
+    cursor: pointer;
+    text-align: start;
     width: 30%;
     margin: 20px 10px;
     border-radius: 10px;
@@ -67,4 +84,26 @@ img{
 }
 #status{
     color: rgb(255, 255, 255);
+}
+p{
+    margin: 3px;
+}
+
+@media (max-width:600px) {
+    #movie-card{
+        width: 70%;
+    }
+}
+@media (min-width:900px) {
+    #movie-card{
+        width: 40%;
+    }
+}
+@media (min-width:1100px) {
+    #movie-card{
+        width: 30%;
+    }
+}
+h1{
+    font-size: 50px;
 }

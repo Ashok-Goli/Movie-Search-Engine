@@ -15,17 +15,27 @@ function search() {
         if (response.Response == "True") {
             var movieData = response
             for (var i = 0; i < movieData.Search.length; i++) {
-                movieWrapper.innerHTML += `
-            <div id="movie-card">
-                        <img
-                            src=${movieData.Search[i].Poster} />
-                        <div id="data">
-                        <p><b>Title: </b><span>${movieData.Search[i].Title}</span> </p>
-                <p><b>Year: </b><span>${movieData.Search[i].Year}</span> </p>
-                            
-                        </div>
-                    </div>`
-            }
+                var id = movieData.Search[i].imdbID
+                $.get("https://www.omdbapi.com/?apikey=8ad164ad&i="+id,function(response){
+                    var movieData = response
+                    console.log(movieData)
+                    movieWrapper.innerHTML += `
+                    <div id="movie-card">
+                                <img
+                                    src=${movieData.Poster} />
+                                <div id="data">
+                                <p><b>Title: </b><span>${movieData.Title}</span> </p>
+                                <hr>
+                        <p><b>Release Date: </b><span>${movieData.Released
+                        }</span> </p>
+                        <p><b>Director: </b><span>${movieData.Director}</span> </p>
+                        <p><b>imdbRating: </b><span>${movieData.imdbRating}</span> </p>
+                        <p><b>Genre: </b><span>${movieData.Genre}</span> </p>
+                                    
+                                </div>
+                            </div>`
+                    })
+                }
         } else {
             Status.innerText = "---404 Error Movie Not found---"
         }
